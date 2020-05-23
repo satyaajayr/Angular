@@ -2,7 +2,7 @@ import {  Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  templateUrl: './app.component.html',
+  template: '<event-list></event-list>',
   styleUrls: ['./app.component.css']
 })
 export class MyAppComponent {
