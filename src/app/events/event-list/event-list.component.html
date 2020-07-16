@@ -1,16 +1,11 @@
 <div>
     <h1>Upcoming Angular events!</h1>
     <hr>
-<div class ="well hoverwell thumbnail">
-    <h2>{{event.name}}</h2>
-    <div>Date: {{event.date}}</div>
-    <div>Time: {{event.time}}</div>
-    <div>Price: ${{event.price}}</div>
-    <div>
-        <span>Location: {{event.location.address}}</span>
-        <span>&nbsp;</span>
-        <span>{{event.location.city}}, {{event.location.country}}</span>
+    <div class="well">
+        <div>Helloo! Satya!</div>
     </div>
-</div>
-    
+    <div *ngFor="let event of events" class="col-md-5">
+        <event-thumbnail  #thumbnail  (eventClick)="handleEventClicked($event)" [event]="event" (click)="handleThumbnailClick(event.name)"></event-thumbnail>
+        <h3 *ngIf="event.price < '500.00'">{{thumbnail.templateVariable}}</h3>
+    </div>
 </div>
